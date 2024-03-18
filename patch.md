@@ -36,13 +36,13 @@ Windows可以使用 CMD 或 PowerShell 进行修补
 
 执行
 ```
-kptools-x86_64-win.exe -p --image kernel-b --skey "YourKey" --kpimg kpimg-android --out kernel
+kptools-x86_64-win.exe -p -i kernel-b -s "YourKey" -k kpimg-android -o kernel
 ```
 
 或者更推荐的，使用 `WSL` 的`Linux`修补
 
 ```
-./kptools-linux -p --image kernel-b --skey "YourKey" --kpimg kpimg-android --out kernel
+./kptools-linux -p -i kernel-b -s "YourKey" -k kpimg-android -o kernel
 ```
 
 修补后无报错，最后用
@@ -70,7 +70,7 @@ magiskboot unpack boot.img
 使用以下命令来修补内核镜像:
 
 ```
-./kptools-linux -p --image kernel-b --skey "YourKey" --kpimg kpimg-android --out kernel
+./kptools-linux -p -i kernel-b -s "YourKey" -k kpimg-android -o kernel
 ```
 修补后无报错，最后用
 
@@ -90,7 +90,7 @@ magiskboot repack boot.img
 
 -v，——version打印版本号。如果指定了-k，则打印kimpg版本。
 
--p，——patch补丁或更新内核映像的补丁(-i)，指定kimpg (-k)和超级键(-s)。
+-p，——patch补丁或更新内核映像的补丁(-i)，指定kimpg (-k)和超级密钥(-s)。
 
 -u，——unpatch解除补丁后的内核映像(-i)。
 
@@ -105,7 +105,7 @@ magiskboot repack boot.img
 
 -k，——kimpg PATH内核补丁镜像路径。
 
--s，——skey PATH设置超级键。
+-s，——skey PATH设置超级密钥。
 
 -o，——out PATH补丁镜像路径。
 
